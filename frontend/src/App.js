@@ -6,6 +6,7 @@ import Product from './Pages/Product';
 import './App.css';
 import { Navbar } from './Components/Navbar/Navbar';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import Footer from './Components/Footer/Footer';
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
           <Route path='/cart' element={<Cart/>}></Route>
           <Route path='/login' element={<Login/>}/>
         </Routes>
+        <Footer/>
       </BrowserRouter>
     </div>
   );
