@@ -4,6 +4,7 @@
     justify-content: center;
     align-items: center;
     gap: 50px;
+    background: linear-gradient(180deg, #d867e0 84%, #e1ffea22 60%);
 }
 
 .footer-logo {
