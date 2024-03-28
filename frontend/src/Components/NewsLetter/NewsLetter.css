@@ -1,5 +1,5 @@
 .newsletter{
-    width: 65%;
+    width: auto;
     height: 40vh;
     display: flex;
     flex-direction: column;
@@ -8,7 +8,7 @@
     margin: auto;
     padding: 0px 140px;
     margin-bottom: 150px;
-    background: linear-gradient(180deg, #fde1ff 0%, #e1ffea22 60%);
+    background: linear-gradient(180deg, #8c5de4 0%, #e1ffea22 70%);
     gap: 30px;
 }
 

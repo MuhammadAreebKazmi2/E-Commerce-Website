@@ -4,7 +4,8 @@
     align-items: center;
     gap:20px;
     /* height: 90 vh; */
-    margin-bottom: 100px;
+    /* margin-bottom: 20px; */
+    background: #bfa2f7;
 }
 
 .new-collections h1{
