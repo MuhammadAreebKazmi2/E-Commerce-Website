@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useContext } from 'react'
 import {ShopContext} from '../Context/ShopContext'
 import { useParams } from 'react-router-dom';
@@ -10,14 +11,13 @@ const Product = () => {
   // Conditional rendering to avoid errors when things still undefined 
   const product = all_product ? all_product.find((e) => e.id === Number(productId)) : null;
   //const product = all_product.find((e) => e.id === productId) ;
+=======
+import React from 'react'
+
+const Product = () => {
+>>>>>>> parent of 4cc81d3 (Linking products to their pages)
   return (
-    <div>
-      {product ? (
-        <Breadcrum product={product} />
-      ) : (
-        <p>Loading...</p>
-      )}
-    </div>
+    <div>Product</div>
   )
 }
 
