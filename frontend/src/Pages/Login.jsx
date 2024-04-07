@@ -2,9 +2,14 @@ import React from 'react'
 import './CSS/Login.css'
 import { useState } from 'react'
 
-
+import { GoogleOAuthProvider } from '@react-oauth/google';
+import { GoogleLogin } from '@react-oauth/google';
+import { jwtDecode } from "jwt-decode";
 
 const Login = () => {
+  
+
+  
 
   const validateEmail = (email) => {
     if (!email) {
@@ -125,6 +130,8 @@ const Login = () => {
 }
 
   return (
+
+
     <div className='loginsignup'>
       <div className="loginsignup-container">
       {/* <div class="g-signin2" data-onsuccess="onSignIn"></div> */}
@@ -136,6 +143,19 @@ const Login = () => {
         </div>
         {/* <button onClick={()=>{state==="Login"?login():signup()}}>Continue</button> */}
         <button onClick={continueHandler}>Continue</button>
+
+        <GoogleOAuthProvider clientId="479057284793-fifo1peddrupv2pii8h7ciidrp1prb4m.apps.googleusercontent.com">
+        
+          <GoogleLogin
+            onSuccess={credentialResponse => {
+              var decoded = jwtDecode(credentialResponse.credential);
+              console.log(decoded);
+            }}
+            onError={() => {
+              console.log('Login Failed');
+            }}
+          />
+        </GoogleOAuthProvider>
         
 
         {state==="Sign Up"?<p className="loginsignup-login">Already have an account? <span onClick={()=>{setState("Login")}}>Login Here</span></p>
