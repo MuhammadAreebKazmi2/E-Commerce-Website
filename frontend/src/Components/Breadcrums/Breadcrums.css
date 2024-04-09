@@ -5,7 +5,8 @@
     gap: 8px;
     color: #5e5e5e;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 600;
+    text-transform: capitalize;
     margin: 40px 10%;
 }
 
