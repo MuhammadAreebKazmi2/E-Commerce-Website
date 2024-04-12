@@ -14,6 +14,12 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
+### 'npm install @react-oauth/google'
+This command ensures that your project has access to the *@react-oauth/google* package and its features, allowing you to integrate Google OAuth authentication into your React application easily.
+
+### 'npm install jwt-decode'
+Specifically, jwt-decode is a library used for decoding JSON Web Tokens (JWTs) in JavaScript. It takes a JWT and decodes it, allowing you to access the claims within the token such as the payload containing user information. This can be useful in scenarios like authentication and authorization in web applications.
+
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.\
