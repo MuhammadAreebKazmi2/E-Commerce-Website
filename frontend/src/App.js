@@ -10,8 +10,25 @@ import Footer from './Components/Footer/Footer';
 import men_banner from './Components/Assets/banner_mens.png'
 import women_banner from './Components/Assets/banner_women.png'
 import kid_banner from './Components/Assets/banner_kids.png'
+import { useEffect } from 'react'
+
+
 
 function App() {
+
+  // function handleCallback(response) {
+
+  // }
+
+  // useEffect(() => {
+  //   /*global google*/
+  //     google.accounts.id.initialize({
+  //     client_id: "438971821781-vp3qtftfg4vjtj2pl5kep4f3fc7mtu11.apps.googleusercontent.com",
+  //     callback: handleCallback
+  //   });
+  //   google.accounts.id.renderButton(document.getElementById("signInDiv"), {theme: "outline", size: "large"});
+
+  // }, [])
   return (
     <div>
       <BrowserRouter>
@@ -29,6 +46,9 @@ function App() {
         </Routes>
         <Footer/>
       </BrowserRouter>
+
+      
+
     </div>
   );
 }
