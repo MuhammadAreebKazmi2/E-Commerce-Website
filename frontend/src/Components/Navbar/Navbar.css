@@ -1,24 +1,25 @@
-.navbar{
-    display:flex;
+/* Existing navbar styling */
+.navbar {
+    display: flex;
     justify-content: space-around;
     padding: 20px;
     box-shadow: 0 1px 3px -2px black;
-    background: linear-gradient(90deg, #bb59c4 5%, #e1ffea22 95%);
+    background: linear-gradient(90deg, #bb59c4 5%, #e1ffea 95%);
 }
 
-.nav-logo{
+.nav-logo {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.nav-logo p{
+.nav-logo p {
     color: #171717;
     font-size: 38px;
     font-weight: 400;
 }
 
-.nav-menu{
+.nav-menu {
     display: flex;
     align-items: center;
     list-style: none;
@@ -28,7 +29,7 @@
     font-weight: 500;
 }
 
-.nav-menu li{
+.nav-menu li {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -37,7 +38,7 @@
     cursor: pointer;
 }
 
-.nav-menu hr{
+.nav-menu hr {
     border: none;
     width: 80%;
     height: 3px;
@@ -45,39 +46,81 @@
     background-color: #ff414f;
 }
 
-.nav-login-cart{
+.nav-login-cart {
     display: flex;
     align-items: center;
     gap: 45px;
 }
 
-.nav-login-cart button{
-    /* display: flex; */
+.nav-login-cart button {
     width: 157px;
     height: 58px;
     outline: none;
     border: 1px solid #7a7a7a;
-    border-radius: 75px ;
+    border-radius: 75px;
     color: #515151;
     font-size: 20px;
     background: white;
     cursor: pointer;
 }
 
-.nav-login-cart button:active{
+.nav-login-cart button:active {
     background: #f3f3f3;
 }
 
-.nav-cart-count{
+.nav-cart-count {
     width: 22px;
     height: 22px;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: -35px;
-    margin-left: -55px;
+    margin-left: 45px;
     border-radius: 11px;
     font-size: 14px;
     background: #ff414f;
     color: white;
+}
+
+/* Styles for search input */
+.nav-search-input {
+    padding: 8px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 200px; /* Adjust width as needed */
+}
+
+/* Styles for search results */
+.search-results {
+    position: absolute;
+    background-color: white;
+    width: 200px; /* Smaller fixed width, adjust as needed */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1000;
+    max-height: 300px; /* Set a max height for overflow management */
+    overflow-y: auto; /* Enable scrolling on overflow */
+    border-radius: 4px; /* Optional: adds rounded corners for better aesthetics */
+}
+
+
+.search-results li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+}
+
+.search-results li:last-child {
+    border-bottom: none;
+}
+
+.search-results li:hover {
+    background-color: #f6f6f6;
+}
+
+.search-results a {
+    text-decoration: none;
+    color: black;
+    display: block;
 }
