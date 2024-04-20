@@ -77,7 +77,10 @@ export const Navbar = () => {
                         <ul className="search-results">
                             {searchResults.map(product => (
                                 <li key={product.id}>
-                                    <Link to={`/product/${product.id}`} onClick={() => setSearchResults([])}>{product.name} - ${product.new_price}</Link>
+                                    <Link to={`/product/${product.id}`} onClick={() => setSearchResults([])}>
+                                        <img src={product.image} alt={product.name} className="product-image" /> {/* Added */}
+                                        {product.name} - ${product.new_price}
+                                    </Link>
                                 </li>
                             ))}
                         </ul>
