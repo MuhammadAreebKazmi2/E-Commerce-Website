@@ -9,7 +9,7 @@ export const Navbar = () => {
     const [menu, setMenu] = useState("");
     const [searchTerm, setSearchTerm] = useState("");
     const [searchResults, setSearchResults] = useState([]);
-    const { getTotalCartItems, all_product } = useContext(ShopContext);
+    const { getTotalCartItems, products } = useContext(ShopContext);
     const searchRef = useRef();  // Ref for the search container
 
     useEffect(() => {
@@ -28,9 +28,9 @@ export const Navbar = () => {
 
     const handleSearchChange = (event) => {
         setSearchTerm(event.target.value);
-        if (event.target.value) {
+        if (event.target.value && products) {
             const searchTermLower = event.target.value.toLowerCase();
-            const filtered = all_product.filter(product => {
+            const filtered = products.filter(product => {
                 const name = product.name || ""; // Fallback to an empty string if undefined
                 const description = product.description || ""; // Fallback to an empty string if undefined
                 return name.toLowerCase().includes(searchTermLower) ||
@@ -100,3 +100,4 @@ export const Navbar = () => {
         </div>
     );
 };
+
