@@ -7,9 +7,14 @@ import { useParams } from 'react-router-dom'
 import { ShopContext } from '../Context/ShopContext'
 
 const Product = () => {
-  const {all_product} = useContext(ShopContext);
+  const {products} = useContext(ShopContext);
+  console.log(products);
   const {productId} = useParams();
-  const product = all_product.find((e)=>e.id === Number(productId));
+  console.log(productId);
+  const product = products.find((e)=>e.id === Number(productId));
+  // const product = products.find((product) => product.id === Number(productId));
+  console.log(product);
+  console.log("sssssss");
   return (
     <div>
       <Breadcrums product={product}/>
