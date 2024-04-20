@@ -120,7 +120,7 @@
     }
     .cartitems-down{
         margin: 80px 0px;
-        flex-wrap: wrap;
+        flex-direction: column;
         gap: 40px;
     }
     .cartitems-total{
@@ -133,14 +133,25 @@
         font-size: 13px;
     }
     .cartitems-promobox{
-        width: 90%;
+        width: auto;
         max-width: 500px;
+    }
+
+    .cartitems-promobox input{
+        width: 100%
+    }
+
+    .cartitems-promobox button{
+        width: 120px;
+        margin-left: -125px;
     }
     
 }
 @media(max-width:500px){
     .cartitems-format-main{
        display: none;
+       grid-template-columns: 0.5fr 3fr 0.5fr;
+       gap: 10px;
     }
     .cartitems-format{
         display: grid;
