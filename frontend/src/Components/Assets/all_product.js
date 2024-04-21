@@ -230,7 +230,7 @@ let all_product = [
   {
     id: 25,
     name: "HP DHE-7000 Music Headset In-Ear Headphone Black",
-    category: "accessorys",
+    category: "accessoriess",
     image: p25_img,
     new_price: 800,
     old_price: 1200,
@@ -238,7 +238,7 @@ let all_product = [
   {
     id: 26,
     name: "HP DHE-7000 Music Headset In-Ear Headphone White",
-    category: "accessorys",
+    category: "accessoriess",
     image: p26_img,
     new_price: 800,
     old_price: 1200,
@@ -246,7 +246,7 @@ let all_product = [
   {
     id: 27,
     name: "DataTraveler Exodia 256GB USB 3.2 Flash Drive DTX/256GB",
-    category: "accessorys",
+    category: "accessoriess",
     image: p27_img,
     new_price: 5000,
     old_price: 5500,
@@ -254,7 +254,7 @@ let all_product = [
   {
     id: 28,
     name: "Silicon Power Blaze B03 128GB USB 3.2 Gen 1 Flash Drive, Black",
-    category: "accessorys",
+    category: "accessoriess",
     image: p28_img,
     new_price: 2600,
     old_price: 2800,
@@ -262,7 +262,7 @@ let all_product = [
   {
     id: 29,
     name: "JBL Flip 6 Portable Bluetooth Waterproof Speaker, Bold JBL Original Pro Sound, Red, JBLFLIP6RED",
-    category: "accessorys",
+    category: "accessoriess",
     image: p29_img,
     new_price: 29000,
     old_price: 30000,
@@ -270,7 +270,7 @@ let all_product = [
   {
     id: 30,
     name: "Logitech Ultimate Ears Wonderboom 3 Ultraportable Bluetooth Speaker | Performance Blue",
-    category: "accessorys",
+    category: "accessoriess",
     image: p30_img,
     new_price: 20000,
     old_price: 24999,
@@ -278,7 +278,7 @@ let all_product = [
   {
     id: 31,
     name: "Logitech PEBBLE MOUSE 2 M350S Slim Compact Bluetooth Mouse | Tonal White",
-    category: "accessorys",
+    category: "accessoriess",
     image: p31_img,
     new_price: 5000,
     old_price: 5400,
@@ -286,7 +286,7 @@ let all_product = [
   {
     id: 32,
     name: "Logitech M240 Silent Bluetooth Wireless Mouse - Silent Touch, Graphite",
-    category: "accessorys",
+    category: "accessoriess",
     image: p32_img,
     new_price: 3500,
     old_price: 4000,
@@ -294,7 +294,7 @@ let all_product = [
   {
     id: 33,
     name: "Samsung Galaxy Watch6 Aluminum Smartwatch 44mm BT - Graphite R940",
-    category: "accessorys",
+    category: "accessoriess",
     image: p33_img,
     new_price: 60000,
     old_price: 64500,
@@ -302,7 +302,7 @@ let all_product = [
   {
     id: 34,
     name: "Samsung Galaxy Watch4 Smartwatch (International, 44mm, Bluetooth/Wi-Fi, Silver) - SM-R870",
-    category: "accessorys",
+    category: "accessoriess",
     image: p34_img,
     new_price: 35000,
     old_price: 39500,
@@ -310,7 +310,7 @@ let all_product = [
   {
     id: 35,
     name: "One by Wacom Medium Creative Pen Graphics Tablet - CTL-672 - Black / Red, USB",
-    category: "accessorys",
+    category: "accessoriess",
     image: p35_img,
     new_price: 30000,
     old_price: 35400,
@@ -318,7 +318,7 @@ let all_product = [
   {
     id: 36,
     name: "Wacom Intuos CTL-4100WL/K0-BX - Small Bluetooth Pen Tablet | Black - Bonus Software Included",
-    category: "accessorys",
+    category: "accessoriess",
     image: p36_img,
     new_price: 32000,
     old_price: 34900,

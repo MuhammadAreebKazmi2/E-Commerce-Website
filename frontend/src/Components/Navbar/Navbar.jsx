@@ -61,9 +61,9 @@ export const Navbar = () => {
             </div>
             <ul className="nav-menu" ref={searchRef}>
                 <li onClick={() => setMenu("shop")} ><Link style={{ textDecoration: 'none' }} to='/'>Shop</Link> {menu === "shop" ? <hr /> : null}</li>
-                <li onClick={() => setMenu("women")} ><Link style={{ textDecoration: 'none' }} to='/merch'>Merch</Link> {menu === "women" ? <hr /> : null}</li>
-                <li onClick={() => setMenu("kids")} ><Link style={{ textDecoration: 'none' }} to='/accessory'>Accessory</Link> {menu === "kids" ? <hr /> : null}</li>
-                <li onClick={() => setMenu("men")} ><Link style={{ textDecoration: 'none' }} to='/new_arrivals'>New Arrivals</Link> {menu === "men" ? <hr /> : null}</li>
+                <li onClick={() => setMenu("merch")} ><Link style={{ textDecoration: 'none' }} to='/merch'>Merch</Link> {menu === "merch" ? <hr /> : null}</li>
+                <li onClick={() => setMenu("accessories")} ><Link style={{ textDecoration: 'none' }} to='/accessories'>Accessories</Link> {menu === "accessories" ? <hr /> : null}</li>
+                <li onClick={() => setMenu("newarrivals")} ><Link style={{ textDecoration: 'none' }} to='/new_arrivals'>New Arrivals</Link> {menu === "newarrivals" ? <hr /> : null}</li>
                 <li>
                     <input
                         type="text"
