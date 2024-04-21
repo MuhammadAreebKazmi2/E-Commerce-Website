@@ -4,13 +4,33 @@ import './Navbar.css';
 import logo from '../Assets/logo.png';
 import cart_icon from '../Assets/cart_icon.png';
 import { ShopContext } from '../../Context/ShopContext';
+import nav_dropdown from '../Assets/nav_dropdown.png'
+
 
 export const Navbar = () => {
     const [menu, setMenu] = useState("");
     const [searchTerm, setSearchTerm] = useState("");
     const [searchResults, setSearchResults] = useState([]);
     const { getTotalCartItems, products } = useContext(ShopContext);
-    const searchRef = useRef();  // Ref for the search container
+
+    const searchRef = React.useRef(null);  // Ref for the search container
+    const menuRef = React.useRef();
+
+    // Create a function that handles setting both refs
+    const setRefs = (element) => {
+        // Set the element to the first ref
+        searchRef.current = element;
+    
+        // Set the element to the second ref
+        menuRef.current = element;
+    };
+  
+
+    const dropdown_toggle = (e) => {
+        menuRef.current.classList.toggle('nav-menu-visible');
+        e.target.classList.toggle('open');
+    }
+    
 
     useEffect(() => {
         const handleOutsideClick = (event) => {
@@ -59,7 +79,8 @@ export const Navbar = () => {
                 <img src={logo} alt="HU DUKAAN" />
                 <p>HU DUKAAN</p>
             </div>
-            <ul className="nav-menu" ref={searchRef}>
+            <img className="nav-dropdown" onClick={dropdown_toggle} src={nav_dropdown} alt="" />
+            <ul className="nav-menu" ref={setRefs}>
                 <li onClick={() => setMenu("shop")} ><Link style={{ textDecoration: 'none' }} to='/'>Shop</Link> {menu === "shop" ? <hr /> : null}</li>
                 <li onClick={() => setMenu("merch")} ><Link style={{ textDecoration: 'none' }} to='/merch'>Merch</Link> {menu === "merch" ? <hr /> : null}</li>
                 <li onClick={() => setMenu("accessories")} ><Link style={{ textDecoration: 'none' }} to='/accessories'>Accessories</Link> {menu === "accessories" ? <hr /> : null}</li>
