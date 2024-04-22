@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import "./CartItems.css";
 import cross_icon from "../Assets/cart_cross_icon.png";
+import whatsapp_icon from "../Assets/whatsapp_icon_n.png";
 import { ShopContext } from "../../Context/ShopContext";
 
 const CartItems = () => {
@@ -104,6 +105,9 @@ const CartItems = () => {
           </div>
         </div>
       </div>
+      <a href="https://wa.me/03312719166" target="_blank" className="whatsapp-button">
+        <img src={whatsapp_icon} alt="WhatsApp" />
+      </a>
     </div>
   );
 };
