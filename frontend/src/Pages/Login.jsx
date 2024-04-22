@@ -51,7 +51,20 @@ const Login = () => {
   }
 
   const continueHandler = () => {
-
+    if (!data.email) {
+      // Display an error message if the email is not entered
+      alert('Please enter your email address');
+      return;
+    }
+    if (!data.password) {
+      // Display an error message if the password is not entered
+      alert('Please enter your password');
+      return;
+    }
+    if (!data.username){
+      alert('Please enter your username');
+      return;
+    }
     if (!validateEmail(data.email)) {
       // Display an error message if the email is not valid for login
       console.log('Invalid email address');

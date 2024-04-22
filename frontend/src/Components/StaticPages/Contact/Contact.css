@@ -1,0 +1,16 @@
+.wpb_wrapper{
+    display: flex;
+    flex-direction: column;
+}
+
+.wpb_wrapper iframe{
+    padding-top: 20px;
+    margin:auto;
+}
+
+.wpb_wrapper p{
+    font-size: larger;
+    margin: 10px;
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+}

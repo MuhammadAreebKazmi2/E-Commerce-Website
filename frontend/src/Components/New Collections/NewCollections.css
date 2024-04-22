@@ -6,7 +6,9 @@
     /* height: 90 vh; */
     /* margin-bottom: 20px; */
     /* background: #9c6ff7; */
-    background:#d867e0;
+    /* background:#d867e0; */
+    background: linear-gradient(180deg, #bb59c4, #e1ffea22 70%);
+
 }
 
 .new-collections h1{

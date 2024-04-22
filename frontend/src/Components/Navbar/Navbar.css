@@ -50,8 +50,11 @@
 
 .nav-login-cart {
     display: flex;
-    align-items: center;
+    align-items:baseline;
     gap: 45px;
+    padding-top: 0.3%;
+    /* margin-inline: auto; */
+    /* padding-top: %; */
 }
 
 .nav-login-cart button {
@@ -76,8 +79,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: -35px;
-    margin-left: 45px;
+    margin-top: -60px;
+    margin-left: 20px;
     border-radius: 11px;
     font-size: 14px;
     background: #ff414f;

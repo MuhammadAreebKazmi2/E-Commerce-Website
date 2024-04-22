@@ -1,0 +1,20 @@
+.entry-content{
+    display: grid;
+    grid-template-columns: repeat(1, 2fr);
+    width: 90%; /* 2/3 of the screen */
+    margin: 0 20px; /* Center the content within the screen */
+    padding: 0;
+}
+
+.entry-content p{
+    padding-left: 25px;
+    font-size: large;
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+
+.entry-content h4{
+    font-size: 25px;
+    padding-top: 7px;
+    font-weight: 600;
+}

@@ -11,8 +11,10 @@ import men_banner from './Components/Assets/banner_mens.png'
 import women_banner from './Components/Assets/banner_women.png'
 import kid_banner from './Components/Assets/banner_kids.png'
 import { useEffect } from 'react'
-
-
+import About from './Components/StaticPages/AboutUs/AboutUs'
+import Return from './Components/StaticPages/ReturnPolicy/ReturnPolicy'
+import Terms from './Components/StaticPages/TermsService/TermsService'
+import Contact from './Components/StaticPages/Contact/Contact'
 
 function App() {
 
@@ -43,6 +45,10 @@ function App() {
           </Route>
           <Route path='/cart' element={<Cart/>}></Route>
           <Route path='/login' element={<Login/>}/>
+          <Route path='/about' element={<About/>}/>
+          <Route path='/return-policy' element={<Return/>}/>
+          <Route path='/terms-of-service' element={<Terms/>}/>
+          <Route path='/contact-us' element={<Contact/>}/>
         </Routes>
         <Footer/>
       </BrowserRouter>
