@@ -1,33 +1,22 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext, useState } from "react";
 import "./CartItems.css";
 import cross_icon from "../Assets/cart_cross_icon.png";
 import { ShopContext } from "../../Context/ShopContext";
 
 const CartItems = () => {
-  const { products } = useContext(ShopContext);
-  const { cartItems, removeFromCart, getTotalCartAmount } = useContext(ShopContext);
-  const [orderDetails, setOrderDetails] = useState({
-    user: "",
-    products: null,
-    total:0
-  });
-  // const addOrder = () => {
-  //   if(localStorage.getItem("auth-token"))
-  //   {
-  //   fetch('http://localhost:4000/confirm', {
-  //     method: 'POST',
-  //     headers: {
-  //       Accept:'application/json',
-  //       'auth-token':`${localStorage.getItem("auth-token")}`,
-  //       'Content-Type': 'application/json'
-  //     },
-  //     body: JSON.stringify({}) // Use requestData instead of undefined data
-  //   })
-  //   .then((resp) => resp.json())
-  //   .then((data) => {console.log('Order confirmed:', data);});}
-  // }; // Empty dependency array means this effect runs only once on component mount
+  const { products, cartItems, removeFromCart, getTotalCartAmount } = useContext(ShopContext);
+  const [orderPlaced, setOrderPlaced] = useState(false);
+  const [emptyCart, setEmptyCart] = useState(false);
 
   const addOrder = async () => {
+    if (Object.keys(cartItems).length === 0) {
+      setEmptyCart(true);
+      setTimeout(() => {
+        setEmptyCart(false);
+      }, 3000);
+      return;
+    }
+
     if (localStorage.getItem("auth-token")) {
       try {
         const response = await fetch('http://localhost:4000/confirm', {
@@ -39,21 +28,21 @@ const CartItems = () => {
           },
           body: JSON.stringify() // Use requestData instead of undefined data
         });
-  
+
         if (!response.ok) {
           throw new Error(`Error fetching /confirm: ${response.statusText}`);
         }
-  
-        const data = await response.json();
-        console.log('Order confirmed:', data);
+
+        setOrderPlaced(true);
+        setTimeout(() => {
+          setOrderPlaced(false);
+          removeFromCart(null, true); // Reset the cart
+        }, 3000);
       } catch (error) {
         console.error(error);
       }
     }
   };
-
-
-
 
   return (
     <div className="cartitems">
@@ -67,23 +56,23 @@ const CartItems = () => {
       </div>
       <hr />
       {products.map((e) => {
-
         if (cartItems[e.id] > 0) {
-          return <div>
-            <div className="cartitems-format-main cartitems-format">
-              <img className="cartitems-product-icon" src={e.image} alt="" />
-              <p cartitems-product-title>{e.name}</p>
-              <p>${e.new_price}</p>
-              <button className="cartitems-quantity">{cartItems[e.id]}</button>
-              <p>${e.new_price * cartItems[e.id]}</p>
-              <img onClick={() => { removeFromCart(e.id) }} className="cartitems-remove-icon" src={cross_icon} alt="" />
+          return (
+            <div key={e.id}>
+              <div className="cartitems-format-main cartitems-format">
+                <img className="cartitems-product-icon" src={e.image} alt="" />
+                <p className="cartitems-product-title">{e.name}</p>
+                <p>${e.new_price}</p>
+                <button className="cartitems-quantity">{cartItems[e.id]}</button>
+                <p>${e.new_price * cartItems[e.id]}</p>
+                <img onClick={() => { removeFromCart(e.id) }} className="cartitems-remove-icon" src={cross_icon} alt="" />
+              </div>
+              <hr />
             </div>
-            <hr />
-          </div>;
+          );
         }
         return null;
       })}
-
       <div className="cartitems-down">
         <div className="cartitems-total">
           <h1>Cart Totals</h1>
@@ -104,6 +93,8 @@ const CartItems = () => {
             </div>
           </div>
           <button onClick={() => { addOrder() }}>PROCEED TO CHECKOUT</button>
+          {orderPlaced && <p className="order-placed-message">Order placed successfully!</p>}
+          {emptyCart && <p className="empty-cart-message">There are no items in the cart!</p>}
         </div>
         <div className="cartitems-promocode">
           <p>If you have a promo code, Enter it here</p>
