@@ -17,13 +17,48 @@ const ShopCategory = (props) => {
     useEffect(() => {
       fetchInfo();
     }, [])
-    
+
+    // const HandleSortChange = (e) => {
+    //   const sortBy = e.target.value === "highToLow";
+    //   handleSortBy(sortBy);
+    // };
+
+    // return (
+    //   <div className="shopcategory-indexSort">
+    //     <p><span>Showing 1 - 12</span> out of 54 Products</p>
+    //     <div className="shopcategory-sort">
+    //     <select onChange={HandleSortChange}>
+    //       <option value="highToLow">Sort by (high to low)</option>
+    //       <option value="lowToHigh">Sort by (low to high)</option>
+    //     </select>
+    //     </div>
+    //   </div>  
+    // );
+
+    const handleSortBy = (reverse) => {
+      let sorted = allproducts.sort((a, b) => {
+        // Convert new_price to numbers for comparison
+        const priceA = a.new_price || 0; // If new_price is undefined/null, default to 0
+        const priceB = b.new_price || 0;
+        return reverse ? priceA - priceB : priceB - priceA;
+        
+      }
+    );
+      console.log(allproducts);
+      setAllProducts([...sorted]);
+      console.log(allproducts,sorted);
+    }
   return (
     <div className="shopcategory">
       <img src={props.banner} className="shopcategory-banner" alt="" />
       <div className="shopcategory-indexSort">
         <p><span>Showing 1 - 12</span> out of 54 Products</p>
-        <div className="shopcategory-sort">Sort by  <img src={dropdown_icon} alt="" /></div>
+        <div className="shopcategory-sort" 
+        onClick={e => handleSortBy (false)}
+        > Sort by (high to low) <img src={dropdown_icon} alt="" /></div>
+        <div className="shopcategory-sort" 
+        onClick={e => handleSortBy (true)}
+        > Sort by (low to high) <img src={dropdown_icon} alt="" /></div>
       </div>
       <div className="shopcategory-products">
         {allproducts.map((item,i) => {
