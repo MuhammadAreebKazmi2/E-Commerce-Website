@@ -18,22 +18,7 @@ const ShopCategory = (props) => {
       fetchInfo();
     }, [])
 
-    // const HandleSortChange = (e) => {
-    //   const sortBy = e.target.value === "highToLow";
-    //   handleSortBy(sortBy);
-    // };
-
-    // return (
-    //   <div className="shopcategory-indexSort">
-    //     <p><span>Showing 1 - 12</span> out of 54 Products</p>
-    //     <div className="shopcategory-sort">
-    //     <select onChange={HandleSortChange}>
-    //       <option value="highToLow">Sort by (high to low)</option>
-    //       <option value="lowToHigh">Sort by (low to high)</option>
-    //     </select>
-    //     </div>
-    //   </div>  
-    // );
+    
 
     const handleSortBy = (reverse) => {
       let sorted = allproducts.sort((a, b) => {
