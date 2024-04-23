@@ -10,7 +10,6 @@ const Contact = () => {
             height="450"
             style={{ border: 0 }} /* style attribute as an object */
             allowFullScreen
-            loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
         />
 
